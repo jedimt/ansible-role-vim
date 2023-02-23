@@ -1,13 +1,15 @@
 galaxy_info:
-  author: Aaron Patten
+  author: jedimt
+  role_name: vim
   description: Install and configure VIM with plugins
-  company: Nebulon
+
   license: MIT
-  min_ansible_version: 2.8
+  min_ansible_version: "5"
   platforms:
   - name: Ubuntu
     versions:
     - bionic
     - focal
-  galaxy_tags: []
+  galaxy_tags:
+    - vim
 dependencies: []

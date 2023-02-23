@@ -1,15 +1,20 @@
 ---
 # defaults file for vim
+
+# Default set of Vim plugins to install
 plugins:
   - name: vim-airline
     url: https://github.com/vim-airline/vim-airline
+    version: v0.11
   - name: nerdtree
     url: https://github.com/preservim/nerdtree
+    version: "6.10.16"
   - name: fzf-vim
     url: https://github.com/junegunn/fzf.vim
+    version: "HEAD"
   - name: vim-gitgutter
     url: https://github.com/airblade/vim-gitgutter
+    version: "HEAD"
   - name: vim-fugitive
     url: https://github.com/tpope/vim-fugitive
-  - name: vim-floaterm
-    url: https://github.com/voldikss/vim-floaterm
+    version: "v3.7"

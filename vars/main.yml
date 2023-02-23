@@ -1,7 +1,12 @@
 ---
 # vars file for vim
+
+# Location for vim configuration directory
 vim_dir: "{{ ansible_env.HOME }}/.vim"
+
+# Location for vim startup file
 vimrc: "{{ ansible_env.HOME }}/.vimrc"
+
 install_packages:
   - vim
   - git

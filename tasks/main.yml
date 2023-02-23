@@ -1,18 +1,18 @@
 ---
 # tasks file for vim
 - name: Install required packages
-  package:
+  ansible.builtin.package:
     name: "{{ install_packages }}"
     state: present
-  become: yes
+  become: true
   tags:
     - install_packages
 
 - name: Ensure .vim/{autoload,bundle} directory exists
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    recurse: no
+    recurse: false
     mode: 0750
   loop:
     - "{{ vim_dir }}"
@@ -20,22 +20,24 @@
     - "{{ vim_dir }}/bundle"
 
 - name: Ensure Pathogen is in place
-  get_url:
+  ansible.builtin.get_url:
     dest: "{{ vim_dir }}/autoload/pathogen.vim"
     url: https://tpo.pe/pathogen.vim
+    mode: '0644'
 
 - name: Deploy plugins
-  git:
+  ansible.builtin.git:
     dest: "{{ vim_dir }}/bundle/{{ item.name }}"
     repo: "{{ item.url }}"
-    clone: yes
-    update: yes
-    recursive: no
+    version: "{{ item.version }}"
+    clone: true
+    update: true
+    recursive: false
   loop: "{{ plugins }}"
 
 - name: Ensure .vimrc config in place
-  copy:
+  ansible.builtin.copy:
     src: vimrc
     dest: "{{ vimrc }}"
-    backup: yes
+    backup: true
     mode: 0640

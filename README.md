@@ -39,12 +39,12 @@ Example Playbook
     # Configure Vim
     # ===========================================================================
     - name: Install Vim plugins
-    hosts: servers
-    gather_facts: false
-    tags: play_vim
+      hosts: servers
+      gather_facts: false
+      tags: play_vim
 
-    roles:
-        - ansible-role-vim
+      roles:
+        - jedimt.vim
 
 License
 -------

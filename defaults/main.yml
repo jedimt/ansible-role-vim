@@ -1,5 +1,5 @@
 ---
-# defaults file for vim
+# defaults file for jedimt.vim
 
 # Default set of Vim plugins to install
 plugins:
@@ -18,3 +18,15 @@ plugins:
   - name: vim-fugitive
     url: https://github.com/tpope/vim-fugitive
     version: "v3.7"
+
+# Location for vim configuration directory
+vim_dir: "{{ ansible_env.HOME }}/.vim"
+
+# Location for vim startup file
+vimrc: "{{ ansible_env.HOME }}/.vimrc"
+
+install_packages:
+  - vim
+  - git
+  - fonts-powerline
+  - fzf
